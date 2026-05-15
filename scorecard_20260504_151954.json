@@ -1,0 +1,44 @@
+{
+  "scorecard_id": "SC-20260504-151954",
+  "fecha_generacion": "2026-05-04T15:19:54.228306",
+  "proyecto": "Evaluación de Integridad Técnica en Datos de Entrenamiento de LLMs",
+  "institucion": "Colegio Mayor del Cauca - Ingeniería Informática",
+  "sprint_actual": 6,
+  "metricas": {
+    "MI-01_ratio_duplicados": {
+      "valor": 9.62,
+      "unidad": "%",
+      "metodo": "MinHash + LSH (Jaccard ≥ 0.8)",
+      "umbral_alerta": ">10.0%",
+      "pares_duplicados_detectados": 5
+    },
+    "MI-02_pct_pii": {
+      "valor": 5.77,
+      "unidad": "%",
+      "metodo": "Regex (email, teléfono, IPv4, cédula, credenciales)",
+      "umbral_alerta": ">2.0%",
+      "documentos_con_pii": 3
+    },
+    "MI-03_toxicidad": {
+      "score_promedio": 0.0002,
+      "pct_documentos_toxicos": 0.0,
+      "metodo": "Diccionario ponderado (200+ términos, normalizado por longitud)",
+      "umbral_alerta": ">5.0% de docs con score > 0.5",
+      "documentos_toxicos": 0
+    },
+    "MI-04_registros_limpios": {
+      "valor": 96.3,
+      "unidad": "%",
+      "metodo": "Filtros heurísticos (HTML, longitud, completitud)",
+      "umbral_alerta": "<80.0%",
+      "registros_originales": 54,
+      "registros_finales": 52
+    }
+  },
+  "recomendaciones": [
+    "DUPLICACIÓN CONTROLADA: El nivel de duplicados está dentro de los límites aceptables para entrenamiento.",
+    "PII DETECTADA: El 5.8% de los documentos contiene posibles datos personales. Se recomienda aplicar ofuscación automática o revisión manual antes del uso.",
+    "TOXICIDAD CONTROLADA: El nivel de contenido tóxico está dentro de los límites aceptables.",
+    "CALIDAD ESTRUCTURAL ADECUADA: El porcentaje de registros limpios supera el umbral mínimo recomendado."
+  ]
+}

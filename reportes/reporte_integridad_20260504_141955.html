@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reporte de Integridad Tecnica</title>
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent-2: #ea580c;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top, #eef2ff 0%, var(--bg) 45%, #fff 100%);
+    }
+    header {
+      padding: 48px 6vw 24px;
+      border-bottom: 3px solid var(--accent);
+      background: linear-gradient(120deg, #0f766e 0%, #0f172a 70%);
+      color: #fff;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      letter-spacing: 0.5px;
+    }
+    header p {
+      margin: 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    main {
+      padding: 28px 6vw 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 18px 0 28px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+    .card .value {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    section {
+      margin: 28px 0;
+    }
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    th {
+      background: #f1f5f9;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 12px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #ecfeff;
+      color: #0f766e;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    ul {
+      margin: 10px 0 0 20px;
+    }
+    @media (max-width: 720px) {
+      header h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reporte de Integridad Tecnica</h1>
+    <p>Pipeline de evaluacion para datos de entrenamiento de LLMs</p>
+    <p>Generado: 2026-05-04 14:19:55</p>
+  </header>
+  <main>
+    <section>
+      <h2>Resumen ejecutivo</h2>
+      <p>Este informe consolida las metricas de calidad tecnica del corpus, mostrando duplicacion, PII, toxicidad y limpieza estructural. El objetivo es evidenciar riesgos antes del entrenamiento de LLMs y demostrar el valor del pipeline en contextos reales.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Duplicados</h3>
+          <div class="value">9.62%</div>
+          <div class="bar"><span style="width:9.62%;"></span></div>
+        </div>
+        <div class="card">
+          <h3>PII detectada</h3>
+          <div class="value">5.77%</div>
+          <div class="bar"><span style="width:5.77%;"></span></div>
+        </div>
+        <div class="card">
+          <h3>Toxicidad</h3>
+          <div class="value">0.00%</div>
+          <div class="bar"><span style="width:0%;"></span></div>
+        </div>
+        <div class="card">
+          <h3>Registros limpios</h3>
+          <div class="value">96.30%</div>
+          <div class="bar"><span style="width:96.3%;"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Resultados clave</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Metrica</th>
+            <th>Valor</th>
+            <th>Comentario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ratio de duplicados</td>
+            <td>9.62%</td>
+            <td>Pares cuasi-duplicados detectados por similitud Jaccard.</td>
+          </tr>
+          <tr>
+            <td>PII detectada</td>
+            <td>5.77%</td>
+            <td>Regex sobre texto limpio (email, telefono, IPv4, cedula, credenciales URL).</td>
+          </tr>
+          <tr>
+            <td>Toxicidad</td>
+            <td>0.00%</td>
+            <td>Diccionario ponderado, score normalizado por longitud.</td>
+          </tr>
+          <tr>
+            <td>Registros limpios</td>
+            <td>96.30%</td>
+            <td>Filtro por HTML, longitud minima y completitud.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Que se hizo</h2>
+      <ul>
+        <li>Ingesta del JSONL y normalizacion basica del texto.</li>
+        <li>Filtrado heuristico para remover ruido estructural.</li>
+        <li>Deduplicacion difusa con MinHash + LSH.</li>
+        <li>Analisis de toxicidad con diccionario ponderado.</li>
+        <li>Deteccion de PII con 5 patrones regex.</li>
+        <li>Consolidacion de metricas en un scorecard.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Detalles tecnicos</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Metadatos de ingesta</h3>
+          <p><span class="tag">Archivo</span> C:\Users\yjmg1\Desktop\Integridad-Tecnica\Integridad-Tecnica\data\muestra.jsonl</p>
+          <p><span class="tag">Tamano MB</span> 0.01</p>
+          <p><span class="tag">SHA256</span> 592a42a8956188803dbe01a07a626a5f4772a38f994cc56ef631c1a14a32dee9</p>
+        </div>
+        <div class="card">
+          <h3>Deduplicacion</h3>
+          <p><span class="tag">N-gramas</span> 5</p>
+          <p><span class="tag">Num. perm</span> 128</p>
+          <p><span class="tag">Umbral Jaccard</span> 0.8</p>
+        </div>
+        <div class="card">
+          <h3>Dataset final</h3>
+          <p><span class="tag">Total docs</span> 52</p>
+          <p><span class="tag">PII docs</span> 3</p>
+          <p><span class="tag">Score tox prom</span> 0.0002</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Limitaciones y consideraciones</h2>
+      <ul>
+        <li>Heuristicas de limpieza pueden descartar texto valido o dejar ruido residual.</li>
+        <li>Regex de PII prioriza velocidad sobre precision; hay falsos positivos.</li>
+        <li>Diccionario de toxicidad no reemplaza un modelo semantico completo.</li>
+        <li>El pipeline asume que el campo principal es "texto".</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recomendaciones automaticas</h2>
+      <ul>
+        <li>DUPLICACIÓN CONTROLADA: El nivel de duplicados está dentro de los límites aceptables para entrenamiento.</li><li>PII DETECTADA: El 5.8% de los documentos contiene posibles datos personales. Se recomienda aplicar ofuscación automática o revisión manual antes del uso.</li><li>TOXICIDAD CONTROLADA: El nivel de contenido tóxico está dentro de los límites aceptables.</li><li>CALIDAD ESTRUCTURAL ADECUADA: El porcentaje de registros limpios supera el umbral mínimo recomendado.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Reporte generado a partir de outputs existentes del pipeline.</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "archivo_origen": "C:\\Users\\yjmg1\\Desktop\\Integridad-Tecnica\\Integridad-Tecnica\\data\\muestra.jsonl",
+  "fecha_procesamiento": "2026-05-04 16:43:51",
+  "tamano_bytes": 9227,
+  "tamano_mb": 0.01,
+  "hash_sha256": "592a42a8956188803dbe01a07a626a5f4772a38f994cc56ef631c1a14a32dee9",
+  "total_registros": 54,
+  "columnas": [
+    "url",
+    "texto",
+    "texto_limpio"
+  ]
+}

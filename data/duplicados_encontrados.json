@@ -1,0 +1,39 @@
+{
+  "parametros": {
+    "n_gramas": 5,
+    "num_perm": 128,
+    "umbral_jaccard": 0.8,
+    "bandas": 16,
+    "filas_por_banda": 8
+  },
+  "total_documentos": 52,
+  "total_duplicados": 5,
+  "porcentaje_duplicados": 9.62,
+  "duplicados": [
+    {
+      "doc_a": 4,
+      "doc_b": 5,
+      "jaccard": 1.0
+    },
+    {
+      "doc_a": 4,
+      "doc_b": 6,
+      "jaccard": 1.0
+    },
+    {
+      "doc_a": 5,
+      "doc_b": 6,
+      "jaccard": 1.0
+    },
+    {
+      "doc_a": 7,
+      "doc_b": 8,
+      "jaccard": 1.0
+    },
+    {
+      "doc_a": 11,
+      "doc_b": 12,
+      "jaccard": 1.0
+    }
+  ]
+}
